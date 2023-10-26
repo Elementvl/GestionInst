@@ -31,6 +31,20 @@
 
 		}
 
+		function getPersonaSpec(){
+			$ci = $_SESSION['ci'];
+			//Realizamos la consulta y guardamos el resultado en la variable $result
+			$result = $this->db->query("SELECT ci, nombre, apellido,  fech_nac, pass, rol, nuevo, baja FROM persona WHERE ci=$ci");
+			//Recorremos el array de la consulta y lo guardamos en la variable $row
+			while($row = $result->fetch_assoc()){
+				//Guardamos en el array $this->personas cada fila que devuelve la consulta
+				$this->personas[]=$row;
+			}
+			//Devolvemos el array personas
+			return $this->personas;
+
+		}
+
         public function VerifyUser($ci, $clave) {
             $sql = "SELECT * FROM persona WHERE ci='$ci' AND pass='$clave';";
             $result = $this->db->query($sql);

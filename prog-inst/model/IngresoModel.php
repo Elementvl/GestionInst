@@ -13,6 +13,22 @@
 			//Determinamos que el atributo personas será un array
 		
 		}	
+
+		function getIngresos(){
+			//Realizamos la consulta y guardamos el resultado en la variable $result
+			$result = $this->db->query("SELECT i.id_ingreso,i.fecha,i.hora,p.ci,p.nombre,p.rol,i.motivo 
+			FROM ingreso i INNER JOIN persona p ON i.ci=p.ci");
+			//Recorremos el array de la consulta y lo guardamos en la variable $row
+			while($row = $result->fetch_assoc()){
+				//Guardamos en el array $this->personas cada fila que devuelve la consulta
+				$this->ingresos[]=$row;
+			}
+			//Devolvemos el array personas
+			return $this->ingresos;
+
+		}
+
+
 		public function AddReg() {
 			// Obtenemos la fecha y hora actual
 			$fecha = date("Y-m-d");

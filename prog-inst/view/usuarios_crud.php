@@ -29,7 +29,7 @@
                     <div class="crear">
                         <button type="button" class="btn-agregar-user btn">Agregar usuario</button>
                             <div id="popup" class="popup-usuarios">
-                                <h1>Crear usuario</h1>
+                                <h1>Crear ussuario</h1>
                                 <h3>Cedula</h3>
                                 <input type="text" placeholder="Campo 1" name="ci" class="cuadros-texto">
                                 <h3>Nombre</h3>
