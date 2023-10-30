@@ -379,11 +379,33 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 /*Informacion usuario*/
 
-.perfil div{
+.perfil{
+    flex-direction: row;
+    margin: 0;
+    justify-content: center;
+    font-size: large;
+    padding: 4%;
+}
+
+.perfil-col-1{
+    width: 50%;
+}
+
+.perfil-col-2{
+    width: 50%;
+}
+
+.perfil .info-ingresos-user {
+    width: 15%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    border: 1px solid #a7a7a7;
     align-items: center;
-    width: 80%;
+    text-align: center;
+}
+
+.perfil .info-ingresos-user p{
+    font-size: medium;
 }
 
 /*Dispositivos pequeños*/
