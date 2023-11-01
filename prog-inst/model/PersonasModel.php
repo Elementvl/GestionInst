@@ -45,6 +45,15 @@
 
 		}
 
+		function getTelPers(){
+			$ci = $_SESSION['ci'];
+			$result = $this->db->query("SELECT tel FROM tel_persona WHERE ci=$ci");
+			while($row = $result->fetch_assoc()){
+				$this->personas[]=$row;
+			}
+			return $this->personas;
+		}
+
         public function VerifyUser($ci, $clave) {
             $sql = "SELECT * FROM persona WHERE ci='$ci' AND pass='$clave';";
             $result = $this->db->query($sql);
@@ -54,7 +63,7 @@
             if ($num_rows > 0) {
                 $this->getRol($ci);
             } else {
-                echo "<script>alert(\"Los datos son incorrectos, intente de nuevo.\");document.location='../'</script>";
+                echo "<script>alert(\"Los datos son incorrectos, intente de nuevo.\");document.location=''</script>";
             }
         
             // El método devuelve la cantidad de filas

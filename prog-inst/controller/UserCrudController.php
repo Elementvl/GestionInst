@@ -1,12 +1,12 @@
 <?php
 session_start();
-require_once("model/PersonasModel.php");
+require_once("../model/PersonasModel.php");
 
 $persona = new PersonasModel();
 
 $datos = $persona->getPersonas();
 
-require_once("view/usuarios_crud.php");
+require_once("../view/usuarios_crud.php");
 
 if (isset($_POST['guardar'])) {
     $ci = $_POST['ci'];

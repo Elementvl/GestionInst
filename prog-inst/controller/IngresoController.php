@@ -1,10 +1,10 @@
 <?php
 
-	require_once("model/PersonasModel.php");
-	require_once("model/IngresoModel.php");
+	require_once("../model/PersonasModel.php");
+	require_once("../model/IngresoModel.php");
 	$persona = new PersonasModel();
 	$ingreso = new IngresoModel();
-	require_once("view/loginMarcarAcceso.php");
+	require_once("../view/loginMarcarAcceso.php");
 
 if (isset($_POST['btn-ingresar'])) {
     $ci = $_POST['login_ci'];

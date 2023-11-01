@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -9,15 +8,39 @@ body {
 }
 
 /*Nav*/
+.nav-container{
+    width: 100%;
+}
 
 .nav {
     color: #fff;
-    padding: 10px;
+    padding: 15px;
     width: 100%;
     box-sizing: border-box;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     background: linear-gradient(to left, #015bb4, #00274d);
     display: flex;
+    justify-content: space-between;
+}
+
+.nav .logo {
+    display: flex;
+}
+
+.nav .sesion{
+    display: flex;
+    align-items: center;
+}
+
+.nav .sesion a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    margin: 0 20px;
+}
+
+.nav .sesion i{
+    margin-right: 5px;
 }
 
 .nav img {
@@ -36,7 +59,8 @@ body {
 .login{
     display: flex;
     justify-content: center;
-    margin-top: 20vh;
+    width: 100%;
+    margin: 10% 0;
 }
 
 .login-iniciar-sesion{
@@ -128,6 +152,39 @@ body {
     border-style: none;
 }
 
+.btn-2 {
+    display: inline-block;
+    color: #212529;
+    background: #b8c1ca;
+    padding: 9px 12px;
+    border-radius: 3px;
+    font-size: 14px;
+    border-style: none;
+}
+
+.btn-3 {
+    display: inline-block;
+    color: #ffffff;
+    background: #970000;
+    padding: 9px 12px;
+    border-radius: 3px;
+    font-size: 14px;
+    border-style: none;
+}
+
+.btn:disabled{
+    color: #000000;
+    background: linear-gradient(to left, #a1a1a1, #a1a1a1);
+}
+
+/*Tabla*/
+.tabla-predet{
+    border: 1px solid;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
 /*Select*/
 
 .select-style {
@@ -142,12 +199,16 @@ body {
 .cuadros-texto{
     display: inline-block;
     color: #000000;
-    background: linear-gradient(to left, #d7d7d7, #d7d7d7);
+    background-color: #d8d8d8;
     padding: 9px 12px;
     border-radius: 3px;
-    font-size: 14px;
     border-style: none;
+    font-size: 14px;
     width: 250px;
+}
+
+.cuadros-texto:disabled{
+    background: #a1a1a1;
 }
 
 /*Titulos*/
@@ -445,7 +506,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     }
 
     .login-container{
-        width: 70%;
+        width: 85%;
         font-size: small;
     }
 
@@ -456,7 +517,6 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     .login {
         flex-direction: column;
         align-items: center;
-        margin: 5vh 0
     }
 
     .container-reloj{
@@ -471,8 +531,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     padding: 20px;
     position: fixed;
     left: 0;
-    top: 60px;
-    height: calc(100% - 60px);
+    height: calc(100% - 80px);
     width: 250px;
     overflow-y: auto;
     visibility: hidden;

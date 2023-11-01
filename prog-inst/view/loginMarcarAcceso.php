@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITS | Marcar Ingreso</title>
-    <link rel="stylesheet" href="view/css/estilos.css">
+    <link rel="stylesheet" href="../view/css/estilos.css">
 </head>
 
 <body>
     <div class="marcarAcceso">
-    <nav class="nav">
-            <div class="container">
-                    <div class="logo">
-                        <img src="view/img/logo_utu_its.svg" alt="Logo">
-                </div>
-                <a href="#" class="nav-link">Cerrar sesión</a>
+        <div class="nav">  
+            <div class="logo">
+                <img src="../view/img/logo_utu_its.svg" alt="Logo">
             </div>
-        </nav>
+            <div class="sesion">
+                <a href=""><i class="fa-solid fa-right-from-bracket"></i>Cerrar sesión</a>
+            </div>
+        </div>
 
         <div class="login">
             <div class="login-container">
@@ -65,8 +65,7 @@
     </div>
     
 
-    <script src="view/js/funciones_marcar.js"></script>
-
+    <script src="../view/js/funciones_marcar.js"></script>
 </body>
 
 </html>

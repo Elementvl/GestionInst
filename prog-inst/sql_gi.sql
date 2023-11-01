@@ -36,6 +36,7 @@ VALUES
     (23456789, 'Maria', 'Lopez', '1985-05-20', 5678, 'docente', 0, false),
     (34567890, 'Pedro', 'Gomez', '1982-09-10', 7890, 'adm', 0, false),
     (45678901, 'Laura', 'Rodriguez', '1998-03-25', 4321, 'func', 0, false),
+    (56298504, 'Marcos', 'da Costa', '2003-01-25', 1899, 'adm', 0, false),
     (56789012, 'Carlos', 'Fernandez', '1976-12-08', 6789, 'visit', 0, false);
 
 

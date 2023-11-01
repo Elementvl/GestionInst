@@ -10,13 +10,14 @@
 
 <body>
     <div class="login-iniciar-sesion">
-        <nav class="nav">
-            <div class="container">
-                    <div class="logo">
-                        <img src="view/img/logo_utu_its.svg" alt="Logo">
+        <div class="nav-container">
+            <div class="nav">  
+                <div class="logo" style="padding: 10px">
+                    <img src="view/img/logo_utu_its.svg" alt="Logo">
                 </div>
             </div>
-        </nav>
+        </div>
+        
 
         <div class="login">
             <div class="login-container">
@@ -33,6 +34,8 @@
                 </div>
             </div>
         </div>
+
+        
     </div>
         
         
