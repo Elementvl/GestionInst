@@ -32,19 +32,39 @@
         <div class="content">
             <h1>Listado de ingresos</h1>
             <div class="crud">
-            
+                <div>
+                    <input type="button" value="Registros eliminados" class="btn">
+                </div>
                 <div class="opciones-crud">
-                <div class="buscar">
-                    <select class="select-style" name="" id="select-filtros">
-                        <option value="">Buscar por...</option>
-                        <option value="id_ingreso">ID</option>
-                        <option value="fyh">Fecha y hora</option>
-                        <option value="ci">Cedula</option>
-                    </select>
-                    <input type="text" class="cuadros-texto" id="text-buscar" disabled/>
-                    <input type="date" class="cuadros-texto" id="input-fecha" style="display: none;">
-                    <input type="time" class="cuadros-texto" id="input-hora" style="display: none;">
-                    <button class="btn" id="btn-buscar" disabled>Buscar</button>
+                    <div class="filtrar-buscar">
+                        <div>
+                            <select class="select-style" name="" id="select-filtros">
+                                <option value="">Buscar por...</option>
+                                <option value="id_ingreso">ID</option>
+                                <option value="fyh">Fecha y hora</option>
+                                <option value="ci">Cédula</option>
+                            </select>
+                            <input type="text" class="cuadros-texto" id="text-buscar" disabled/>
+                            <input type="date" class="cuadros-texto" id="input-fecha" style="display: none;">
+                            <input type="time" class="cuadros-texto" id="input-hora" style="display: none;">
+                            <button class="btn" id="btn-buscar" name="buscar-user-btn" disabled><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+                        </div>
+                        <div>
+                        <select class="select-style">
+                                    <option value="">Ordenar por</option>
+                                    <option value="">ID</option>
+                                    <option value="">Fecha</option>
+                                    <option value="">Hora</option>
+                                    <option value="">Cédula</option>
+                                    <option value="">Nombre</option>
+                                    <option value="">Rol</option>
+                                    <option value="">Motivo</option>
+                                </select>
+                                <select class="select-style">
+                                    <option value="">Ascendente</option>
+                                    <option value="">Descendente</option>
+                                </select>
+                        </div>
                 </div>
 
                 </div>

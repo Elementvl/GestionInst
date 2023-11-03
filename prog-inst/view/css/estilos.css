@@ -185,6 +185,12 @@ body {
     border-collapse: collapse;
 }
 
+table th{
+    font-weight: bold;
+    border: 1px solid;
+    padding: 10px;
+}
+
 /*Select*/
 
 .select-style {
@@ -230,11 +236,6 @@ h1{
     display: flex;
     flex-direction: row;
 }
-
-.tabla {
-    margin: 2% 0;
-}
-
 
 
 .nbl-content{
@@ -365,12 +366,19 @@ h1{
 
 .opciones-crud {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .crud {
     display: flex; 
     flex-direction: column;
+}
+
+.filtrar-buscar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0 15px 0;
 }
 
 .btn-agregar-user {
@@ -423,6 +431,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     width: 100%;
     text-align: center;
     border-collapse: collapse;
+    margin-top: 15px;
 }
 
 .tabla-ingresos th, td{
@@ -486,7 +495,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
         flex-direction: column;
     }
 
-    .crear{
+    .crear-bajas{
         margin-bottom: 10px;
     }
 
@@ -511,7 +520,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     }
 
     .tabla{
-        overflow-x:auto;
+        overflow-x:scroll;
     }
 
     .login {

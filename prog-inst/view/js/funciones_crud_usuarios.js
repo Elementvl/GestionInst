@@ -1,30 +1,19 @@
-/*Agregar*/
-document.addEventListener('DOMContentLoaded', function() {
-    var crearButton = document.querySelector('.crear button');
-    var popup = document.getElementById('popup-agregar');
-    var cancelarButton = document.getElementById('cancelar');
-    var guardarButton = document.getElementById('guardar');
+/*Agregar usuario*/
 
-    crearButton.addEventListener('click', function() {
-        popup.style.display = 'block';
-    });
+function abrirPopupAddUser() {
+    var popupAgregarUser = document.getElementById('popup-agregar-user');
+    popupAgregarUser.style.display = 'block';
+}
 
-    cancelarButton.addEventListener('click', function() {
-        popup.style.display = 'none';
-    });
+function cerrarPopupAddUser() {
+    var popupAgregarUser = document.getElementById('popup-agregar-user');
+    popupAgregarUser.style.display = 'none';
+}
 
-    guardarButton.addEventListener('click', function() {
-        // Aquí puedes agregar el código para guardar la información
-        // y luego cerrar el popup si es necesario.
-        // Por ejemplo:
-        // GuardarDatos();
-        // popup.style.display = 'none';
-    });
-});
 
-/*Editar*/
+/*Editar usuario*/
 function abrirPopupEditar(ci, nombre, apellido, fecha_nac, rol) {
-    var popupEditar = document.getElementById('popup-editar');
+    var popupEditar = document.getElementById('popup-editar-user');
     popupEditar.style.display = 'block';
 
     document.getElementById('cedula-editar').value = ci;
@@ -36,13 +25,13 @@ function abrirPopupEditar(ci, nombre, apellido, fecha_nac, rol) {
 
 
 function cerrarPopupEditar() {
-    var popupEditar = document.getElementById('popup-editar');
+    var popupEditar = document.getElementById('popup-editar-user');
     popupEditar.style.display = 'none';
 }
 
-/*Eliminar*/
+/*Eliminar usuario*/
 function confirmarBorrar(ci) {
-    var popupBorrar = document.getElementById('popup-borrar');
+    var popupBorrar = document.getElementById('popup-borrar-user');
     popupBorrar.style.display = 'block';
 
     // Asignar el valor de ci al botón de confirmar para que puedas utilizarlo cuando se confirme el borrado
@@ -50,7 +39,7 @@ function confirmarBorrar(ci) {
 }
 
 function cerrarPopupBorrar() {
-    var popupBorrar = document.getElementById('popup-borrar');
+    var popupBorrar = document.getElementById('popup-borrar-user');
     popupBorrar.style.display = 'none';
 }
 
@@ -69,4 +58,49 @@ function verTelefonos() {
 function cerrarPopupTelefonos() {
     var popupTelefonos = document.getElementById('popup-telefonos');
     popupTelefonos.style.display = 'none';
+}
+
+/*Borrar telefonos*/
+function confirmarBorrarTel(tel) {
+    var popupBorrarTel = document.getElementById('popup-borrar-tel');
+    popupBorrarTel.style.display = 'block';
+
+    // Asignar el valor de ci al botón de confirmar para que puedas utilizarlo cuando se confirme el borrado
+    document.getElementById('confirmar-borrar-tel').setAttribute('onclick', 'borrarTel("'+tel+'")');
+}
+
+function cerrarPopupBorrarTel() {
+    var popupBorrarTel = document.getElementById('popup-borrar-tel');
+    popupBorrarTel.style.display = 'none';
+}
+
+function borrarTel(tel) {
+    // Aquí puedes agregar tu código para borrar el usuario con la cédula 'ci'
+    cerrarPopupBorrarTel(); // Cierra el pop-up después de confirmar
+}
+
+/*Editar telefonos*/
+
+function abrirPopupEditarTel(tel) {
+    var popupEditarTel = document.getElementById('popup-editar-tel');
+    popupEditarTel.style.display = 'block';
+
+    document.getElementById('tel-editar').value = tel;
+}
+
+
+function cerrarPopupEditarTel() {
+    var popupEditarTel = document.getElementById('popup-editar-tel');
+    popupEditarTel.style.display = 'none';
+}
+
+/*Usuarios eliminados*/
+function abrirPopupUserElim() {
+    var popupUserElim= document.getElementById('popup-user-elim');
+    popupUserElim.style.display = 'block';
+}
+
+function cerrarPopupUserElim() {
+    var popupUserElim = document.getElementById('popup-user-elim');
+    popupUserElim.style.display = 'none';
 }
