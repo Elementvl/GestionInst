@@ -136,7 +136,7 @@
                 </div>
 
 
-                <div id="popup-borrar-user" class="popup-usuarios">
+                <div id="popup-borrar-user" class="popup-borrar">
                     <h3>¿Está seguro que desea dar de baja este usuario?</h3>
                     <button id="confirmar-borrar" class="btn-3" name="confirmar-borrar-user">Confirmar</button>
                     <button id="cancelar-borrar" class="btn-2" onclick="cerrarPopupBorrar()">Cancelar</button>
@@ -177,7 +177,7 @@
 
                 </div>
 
-                <div id="popup-borrar-tel" class="popup-usuarios">
+                <div id="popup-borrar-tel" class="popup-borrar">
                     <h3>¿Está seguro que desea dar de baja este teléfono?</h3>
                     <button id="confirmar-borrar-tel" class="btn-3" name="confirmar-borrar-tel">Confirmar</button>
                     <button id="cancelar-borrar-tel" class="btn-2" onclick="cerrarPopupBorrarTel()">Cancelar</button>

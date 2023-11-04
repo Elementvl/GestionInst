@@ -67,3 +67,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+/*Ingresos eliminados*/
+function abrirPopupIngElim() {
+    var popupIngElim= document.getElementById('popup-ing-elim');
+    popupIngElim.style.display = 'block';
+}
+
+function cerrarPopupIngElim() {
+    var popupIngElim = document.getElementById('popup-ing-elim');
+    popupIngElim.style.display = 'none';
+}

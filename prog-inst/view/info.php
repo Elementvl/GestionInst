@@ -63,15 +63,32 @@
             cursor: pointer;
         }
 
-        
+        .info{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin-right: 5%;
+            background-color: #ffffff;
+            border-radius: 15px;
+        }
 
         .info-user{
             display: flex;
             flex-direction: column;
-            width: 50%;
-            border: 1px solid #a7a7a7;
             padding: 3%;
-            margin-right: 5%;
+            background-color: #ffffff;
+            border-radius: 15px;
+        }
+
+        .banner-img{
+            width: 100%;
+            height: 100%;
+            border-radius: 15px 15px 0px 0px;
+        }
+        
+        .banner{
+            width: 100%;
+            height: 200px;
         }
     </style>
 </head>
@@ -99,61 +116,58 @@
         </div>
 
         <div class="content perfil">
-
-            <div class="info-user">
-                <div>
-                    <h2>Mi perfil</h2>
+            <div class="info">
+                <div class="banner">
+                    <img class="banner-img" src="../view/img/banner-perfil.jpg" alt="banner">
                 </div>
-                <div style="display: flex; width: 100%;">
-                <div class="perfil-col-1">
 
-                    <div>
-                        <h3>Cedula:</h3>
-                        <p><?php foreach ($pers_data as $data) { echo $data['ci'];}?></p>
-                    </div>
+                <div class="info-user">
+                    <div style="display: flex; width: 100%;">
+                    <div class="perfil-col-1">
 
-                    <div>
-                        <h3>Nombre:</h3>
-                        <p><?php foreach ($pers_data as $data) { echo $data['nombre'];}?></p>
-                    </div>
+                        <div style="display:flex">
+                            <h2><?php foreach ($pers_data as $data) { echo $data['nombre'];}?> <?php foreach ($pers_data as $data) { echo $data['apellido'];}?></h2>
+                        </div>
+                            
+                        <div>
+                            <h4>Cédula</h4>
+                            <p><?php foreach ($pers_data as $data) { echo $data['ci'];}?></p>
+                        </div>
 
-                    <div>
-                        <h3>Apellido:</h3>
-                        <p><?php foreach ($pers_data as $data) { echo $data['apellido'];}?></p>
-                    </div>
+                        <div>
+                            <h4>Fecha de nacimiento:</h4>
+                            <p><?php foreach ($pers_data as $data) { echo $data['fech_nac'];}?></p>
+                        </div>
+                        </div>
+                        <div class="perfil-col-2">
+                        <div>
+                            <h3>Telefono:</h3>
+                            <button class="btn" id="btn-ver-tel" onclick="abrirPopup('popup-ver-tel')">Ver telefonos</button>
+                        </div>
 
-                    <div>
-                        <h3>Fecha de nacimiento:</h3>
-                        <p><?php foreach ($pers_data as $data) { echo $data['fech_nac'];}?></p>
-                    </div>
-                    </div>
-                    <div class="perfil-col-2">
-                    <div>
-                        <h3>Telefono:</h3>
-                        <button class="btn" id="btn-ver-tel" onclick="abrirPopup('popup-ver-tel')">Ver telefonos</button>
-                    </div>
+                        <div>
+                            <h3>Rol:</h3>
+                            <p><?php foreach ($pers_data as $data) { 
+                                if($data['rol']=="est"){
+                                    echo "Estudiante";
+                                }else if($data['rol']=="adm"){
+                                    echo "Administrativo";
+                                }else  if($data['rol']=="visit"){
+                                    echo "Visitante";
+                                }else  if($data['rol']=="docente"){
+                                    echo "Docente";
+                                }else  if($data['rol']=="func"){
+                                    echo "Funcionario";
+                                    }
+                                }?></p>
+                        </div>
 
-                    <div>
-                        <h3>Rol:</h3>
-                        <p><?php foreach ($pers_data as $data) { 
-                            if($data['rol']=="est"){
-                                echo "Estudiante";
-                            }else if($data['rol']=="adm"){
-                                echo "Administrativo";
-                            }else  if($data['rol']=="visit"){
-                                echo "Visitante";
-                            }else  if($data['rol']=="docente"){
-                                echo "Docente";
-                            }else  if($data['rol']=="func"){
-                                echo "Funcionario";
-                                }
-                            }?></p>
+                        <div>
+                            <h3>Pin:</h3>
+                            <button class="btn" id="btn-cambiar-pin" onclick="abrirPopup('popup-cambiar-pin')">Cambiar pin</button>
+                        </div>
                     </div>
-
-                    <div>
-                        <h3>Pin:</h3>
-                        <button class="btn" id="btn-cambiar-pin" onclick="abrirPopup('popup-cambiar-pin')">Cambiar pin</button>
-                    </div>
+                
 
                     </div>
                 </div>

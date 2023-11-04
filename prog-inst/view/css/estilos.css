@@ -455,6 +455,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     justify-content: center;
     font-size: large;
     padding: 4%;
+    background-color: #e1e2f6;
 }
 
 .perfil-col-1{
@@ -469,9 +470,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     width: 15%;
     display: flex;
     flex-direction: column;
-    border: 1px solid #a7a7a7;
     align-items: center;
     text-align: center;
+    background-color: #ffffff;
+    border-radius: 15px;
 }
 
 .perfil .info-ingresos-user p{
@@ -604,4 +606,32 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 .popup-buttons button {
     margin-top: 20px;
     margin-right: 10px;
+}
+
+/*Ventana crud ingresos*/
+
+.popup-ing-elim{
+    max-width: 900px;
+}
+
+.popup-ing-elim .tabla-ingresos th:first-child {
+    width: 25px;
+  }
+
+.popup-ing-elim .tabla-ingresos th:last-child {
+    width: 0;
+  }
+
+  /*popup borrar*/
+.popup-borrar {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    box-sizing: border-box;
 }

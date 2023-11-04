@@ -33,7 +33,7 @@
             <h1>Listado de ingresos</h1>
             <div class="crud">
                 <div>
-                    <input type="button" value="Registros eliminados" class="btn">
+                    <input type="button" value="Registros eliminados" onclick="abrirPopupIngElim()" class="btn">
                 </div>
                 <div class="opciones-crud">
                     <div class="filtrar-buscar">
@@ -115,13 +115,51 @@
                     </div>
                 </div>
 
-                <div id="popup-borrar" class="popup-usuarios">
+                <div id="popup-borrar" class="popup-borrar">
                     <h2>¿Está seguro que desea dar de baja este registro de ingreso?</h2>
                     <div class="popup-buttons">
                         <button id="confirmar-baja" name="btn-baja-ingreso" class="btn-3">Confirmar</button>
                         <button id="cancelar" class="btn-2" onclick="cerrarPopupBorrar()">Cancelar</button>
                     </div>
-            </div>
+                </div>
+
+                <div id="popup-ing-elim" class="popup-usuarios popup-ing-elim">
+                    <h2>Ingresos eliminados</h2>
+                    <div style="display:flex;">
+                        <input type="text" class="cuadros-texto" placeholder="Buscar ingreso..." name="buscar-ing-txt" style="width: 50%;">
+                        <button class="btn" name="buscar-ing-btn" style="height: 32px;"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+                    </div>
+                    <div class="tabla">
+                        <table class="tabla-ingresos" style="margin-top: 10px;">
+                            <tr>
+                                <th>Id</th>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Cédula</th>
+                                <th>Nombre</th>
+                                <th>Rol</th>
+                                <th>Motivo</th>
+                                <th>Acciones</th>
+                            </tr>
+                            <?php
+                                    
+                                if(isset($datos)){
+
+                                    foreach ($datos as $dato) {
+                                        echo "<tr><td>".$dato["id_ingreso"]."</td><td>".$dato["fecha"]."</td><td>".$dato["hora"]
+                                        ."</td><td>".$dato["ci"]."</td><td>".$dato["nombre"]."</td><td>".$dato["rol"]."</td><td>"
+                                        .$dato["motivo"]."</td><td><i id='accion-reactivar' onclick='' class='fa-solid fa-arrow-up' style='color: #088000; margin-right: 6px;'></i></td></tr>";
+                                        }
+                                    }
+                                            
+                            ?>
+                        </table>
+                    </div>
+                    <div class="popup-buttons">
+                        <button name="btn-react-ing" class="btn">Guardar</button>
+                        <button class="btn-2" onclick="cerrarPopupIngElim()">Cancelar</button>
+                    </div>
+                </div>
         </div>
     </div>
     
