@@ -1,3 +1,11 @@
+<?php 
+$rol = $_SESSION['rol'];
+
+$visual="none";
+ if ($rol=="adm"){
+        $visual="block";
+ }
+?> 
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,6 +15,10 @@
     <link rel="stylesheet" href="../view/css/estilos.css">
     <script src="https://kit.fontawesome.com/3ee734fc3f.js" crossorigin="anonymous"></script>
     <style>
+        
+        .tab_adm {
+            display: <?php echo $visual; ?>;    
+        }
         .popup {
             display: none;
             position: fixed;
@@ -109,8 +121,8 @@
             <h1>Menú</h1>
             <ul>
                 <li><a href="InfoController.php">Informacion personal</a></li>
-                <li><a href="UserCrudController.php">Gestionar Usuarios</a></li>
-                <li><a href="IngresosCrudController.php">Gestionar ingresos</a></li>
+                <li class="tab_adm"  ><a href="UserCrudController.php">Gestionar Usuarios</a></li>
+                <li class="tab_adm"  ><a href="IngresosCrudController.php">Gestionar ingresos</a></li>
                 <li><a href="IngresoController.php">Marcar acceso</a></li>
             </ul>
         </div>

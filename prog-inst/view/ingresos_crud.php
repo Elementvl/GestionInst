@@ -37,18 +37,22 @@
                 </div>
                 <div class="opciones-crud">
                     <div class="filtrar-buscar">
+                    <FORM method ="POST">
                         <div>
-                            <select class="select-style" name="" id="select-filtros">
-                                <option value="">Buscar por...</option>
+                            <select class="select-style" name="select-filtros" id="select-filtros">
+                                <option value="">Ver todos</option>
                                 <option value="id_ingreso">ID</option>
                                 <option value="fyh">Fecha y hora</option>
                                 <option value="ci">Cédula</option>
                             </select>
-                            <input type="text" class="cuadros-texto" id="text-buscar" disabled/>
-                            <input type="date" class="cuadros-texto" id="input-fecha" style="display: none;">
-                            <input type="time" class="cuadros-texto" id="input-hora" style="display: none;">
-                            <button class="btn" id="btn-buscar" name="buscar-user-btn" disabled><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+                            
+                            <input type="text" class="cuadros-texto" name ="text-buscar" id="text-buscar" disabled/>
+                            <input type="date" class="cuadros-texto" name = "input-fecha" id="input-fecha" style="display: none;">
+                            <input type="time" class="cuadros-texto" name ="input-hora" id="input-hora" style="display: none;">
+                            <button class="btn" id="btn-buscar" name="buscar-ing-btn" disabled><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+                                                    
                         </div>
+                        </FORM>
                         <div>
                         <select class="select-style">
                                     <option value="">Ordenar por</option>
@@ -96,11 +100,11 @@
                         </tr>
                     </table>
                 </div>
-
+                                <FORM METHOD ="POST">
                 <div id="popup-editar" class="popup-usuarios">
                     <h2>Editar ingreso</h2>
                     <h3>Id ingreso</h3>
-                    <input type="text" class="cuadros-texto" id="id-ingreso-editar" disabled/>
+                    <input type="text" class="cuadros-texto" name="id-ingreso-editar" id="id-ingreso-editar" readonly/>
                     <h3>Fecha</h3>
                     <input type="date" class="cuadros-texto" id="date-editar" disabled/>
                     <h3>Hora</h3>
@@ -108,11 +112,12 @@
                     <h3>Cédula</h3>
                     <input type="text" class="cuadros-texto" id="ci-editar" disabled/>
                     <h3>Motivo</h3>
-                    <input type="text" class="cuadros-texto" id="motivo-editar">
+                    <input type="text" class="cuadros-texto" name="motivo-editar" id="motivo-editar">
                     <div class="popup-buttons">
-                        <button id="guardar" name="btn-edit" class="btn">Guardar</button>
+                        <button name="btn_guardar_m" id="guardar" name="btn-edit" class="btn">Guardar</button>
                         <button id="cancelar" class="btn-2" onclick="cerrarPopupEditar()">Cancelar</button>
                     </div>
+                                </FORM>
                 </div>
 
                 <div id="popup-borrar" class="popup-borrar">

@@ -3,7 +3,7 @@
 	require_once("model/PersonasModel.php");
 
 	$persona = new PersonasModel();
-
+ 
 	require_once("view/loginIniciarSesion.php");
 	session_start();
 	unset($_SESSION['rol']);
@@ -16,6 +16,7 @@
 				$rol = $persona->getRol($ci);
 				$_SESSION['rol'] = $rol;
 				$_SESSION['ci'] = $ci;		
+				
                 echo "<script>document.location.href = 'controller/InfoController.php';</script>";	
 			}
 		}

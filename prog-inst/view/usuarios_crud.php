@@ -37,24 +37,26 @@
                     </div>
 
                     <div class="filtrar-buscar">
+                    <FORM method="POST">
                         <div style="display:flex">
                             <input type="text" class="cuadros-texto" placeholder="Buscar usuario..." name="buscar-user-txt">
                             <button class="btn" name="buscar-user-btn"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
                         </div>
                         <div>
-                            <select class="select-style">
+                            <select class="select-style" name="select-filtros">
                                 <option value="">Ordenar por</option>
-                                <option value="">Cédula</option>
-                                <option value="">Nombre</option>
-                                <option value="">Apellido</option>
-                                <option value="">Edad</option>
-                                <option value="">Rol</option>
+                                <option value="ci">Cédula</option>
+                                <option value="nombre">Nombre</option>
+                                <option value="apellido">Apellido</option>
+                                <option value="fech_nac">Edad</option>
+                                <option value="rol">Rol</option>
                             </select>
                             <select class="select-style">
                                 <option value="">Ascendente</option>
                                 <option value="">Descendente</option>
                             </select>
                         </div>
+                    </FORM>
                     </div>
                 </div>
                 <div class="tabla">
@@ -110,11 +112,11 @@
                         <button id="cancelar" class="btn-2" onclick="cerrarPopupAddUser()">Cancelar</button>
                     </div>
                 </div>
-
+<form method="POST">
                 <div id="popup-editar-user" class="popup-usuarios">
                     <h2>Editar usuario</h2>
                     <h3>Cedula</h3>
-                    <input type="text" placeholder="Cedula" name="ci-editar" class="cuadros-texto" id="cedula-editar" disabled />
+                    <input type="text" placeholder="Cedula" name="ci-editar" class="cuadros-texto" id="cedula-editar" readonly />
                     <h3>Nombre</h3>
                     <input type="text" placeholder="Nombre" name="nom-editar" class="cuadros-texto" id="nombre-editar">
                     <h3>Apellido</h3>
@@ -134,7 +136,7 @@
                         <button class="btn-2" onclick="cerrarPopupEditar()">Cancelar</button>
                     </div>
                 </div>
-
+                </form>
 
                 <div id="popup-borrar-user" class="popup-borrar">
                     <h3>¿Está seguro que desea dar de baja este usuario?</h3>
@@ -209,10 +211,10 @@
                             </tr>
                             <?php
                                     
-                                if(isset($datos)){
+                                if(isset($datos_baja)){
 
-                                    foreach ($datos as $dato) {
-                                        echo "<tr><td>".$dato["ci"]."</td><td>".$dato["nombre"]."</td><td>".$dato["apellido"]."</td><td>".$dato["rol"].
+                                    foreach ($datos_baja as $dato_b) {
+                                        echo "<tr><td>".$dato_b["ci"]."</td><td>".$dato_b["nombre"]."</td><td>".$dato_b["apellido"]."</td><td>".$dato["rol"].
                                         "</td><td><i id='accion-reactivar' onclick='' class='fa-solid fa-arrow-up' style='color: #088000; margin-right: 6px;'></i></td></tr>";
 
                                         }

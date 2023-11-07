@@ -4,9 +4,8 @@ require_once("../model/PersonasModel.php");
 
 $persona = new PersonasModel();
 
-$datos = $persona->getPersonas();
 
-require_once("../view/usuarios_crud.php");
+
 
 if (isset($_POST['guardar'])) {
     $ci = $_POST['ci'];
@@ -35,5 +34,51 @@ if (isset($_POST['btn-add'])) {
     $persona->AddPersona($ci, $nombre, $apellido, $fecha,$rol);
     $persona->AddTel($ci, $tel);
 }
+
+if (isset($_POST['buscar-user-btn'])){
+    
+        if(isset($_POST['select-filtros'])){
+   
+                        if($_POST['buscar-user-txt'] == ""){
+                
+                    $datos = $persona->getPersonas();
+                }else 
+                 if($_POST['select-filtros'] == 'rol'){
+                
+                    $datos = $persona->getPersonasByRol($_POST['buscar-user-txt']);
+                
+                }else if($_POST['select-filtros'] == 'ci'){
+                    
+                    $datos = $persona->getPersonasByCi($_POST['buscar-user-txt']);
+                  
+                
+                }else if($_POST['select-filtros'] == 'nombre'){
+                
+                    $datos = $persona->getPersonasByNombre($_POST['buscar-user-txt']);
+                
+                }else if($_POST['select-filtros'] == 'apellido'){
+                
+                    $datos = $persona->getPersonasByApellido($_POST['buscar-user-txt']);
+                
+                }else if($_POST['select-filtros'] == 'fecha'){
+                
+                    $datos = $persona->getPersonasByFecha($_POST['buscar-user-txt']);
+                
+                }
+    }
+}
+
+$datos_baja = $persona->getPersonasBaja();  
+
+if(isset($_POST['btn-edit'])){
+    $persona->updatePersona($_POST['ci-editar'], $_POST['nom-editar'], $_POST['ape-editar'],
+     $_POST['date-editar'], $_POST['rol-editar']);
+
+
+
+
+
+}    require_once("../view/usuarios_crud.php");
+
 ?>
 
